@@ -6,13 +6,28 @@
 -- To change this template use File | Settings | File Templates.
 --
 
-local redis = require 'redis'
-local client = redis.connect('172.16.2.146', 6379)
-local response = client:ping()            --true
+function getClient()
+    local redis = require 'redis'
+    local client = redis.connect('172.16.2.146', 6379)
+    local response = client:ping()            --true
+    return client
+end
 
-client:set('lee2', "add11")
+
+function set(key, value)
+    client = getClient()
+    client:set(key, value)
+end
+
+function get(key)
+    client = getClient()
+    local result = client:get(key)
+    print("result", result)
+    return result
+end
 
 
-
+set('global1', 'value111')
+print(get("global1"))
 
 
