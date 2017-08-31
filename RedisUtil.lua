@@ -19,7 +19,7 @@ function set(key, value)
     client:set(key, value)
 end
 
-function get(key)
+function getValue(key)
     client = getClient()
     local result = client:get(key)
     print("result", result)
@@ -28,6 +28,6 @@ end
 
 
 set('global1', 'value111')
-print(get("global1"))
+print(getValue("global1"))
 
 
