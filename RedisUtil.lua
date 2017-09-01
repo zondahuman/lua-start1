@@ -14,7 +14,7 @@ function getClient()
 end
 
 
-function set(key, value)
+function setValue(key, value)
     client = getClient()
     client:set(key, value)
 end
@@ -22,12 +22,12 @@ end
 function getValue(key)
     client = getClient()
     local result = client:get(key)
-    print("result", result)
+    print("result:", result)
     return result
 end
 
 
-set('global1', 'value111')
+setValue('global1', 'value111')
 print(getValue("global1"))
 
 
