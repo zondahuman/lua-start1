@@ -34,6 +34,7 @@ cp redis-lua/src/redis.lua /usr/local/lua/redis/redis.lua
 http://blog.csdn.net/wodwl/article/details/7970263
 
 
+ sudo yum install lua-socket
 
 
 
